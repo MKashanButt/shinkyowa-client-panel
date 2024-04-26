@@ -1,0 +1,49 @@
+models:
+  CompanyAccounts:
+    id: integer primary autoincrement
+    date: date
+    description: text
+    debit: string:10
+    credit: string:10
+    balance: string:10
+
+  CustomerAccounts:
+    id: integer primary autoincrement
+    customer_id: string:10
+    customer_name: string:40
+    customer_email: string:40
+    password: string
+
+  CustomerPayments:
+    id: integer primary autoincrement
+    date: date
+    customer_account: string:20
+    vehicle_name: string:30
+    chassis: string:30
+    c&f: string:10
+    payment_recieved_date: date
+    balance: string:10
+
+  Payments:
+    id: integer primary autoincrement
+    customer_account: integer
+    date: date
+    amount: string:20
+
+  Stock:
+    id: integer primary autoincrement
+    stock: string:10
+    make: integer
+    model: string:10
+    year: integer:4
+    fob: string:10
+    currency: string:1 nullable
+    mileage: string:10
+    engine: string:10
+    doors: string:4
+    transmission: string:10
+    body_type: string:10
+    fuel: string:10
+    category_id: integer
+    extras: text
+    buy_link: text
