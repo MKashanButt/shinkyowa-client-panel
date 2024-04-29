@@ -9,15 +9,11 @@ class Payments extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'customer_account',
         'date',
-        'amount',
+        'amount_in_dollar',
+        'amount_in_jpy',
     ];
 
     /**

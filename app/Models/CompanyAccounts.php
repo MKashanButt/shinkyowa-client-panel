@@ -9,11 +9,6 @@ class CompanyAccounts extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'date',
         'description',
@@ -22,11 +17,6 @@ class CompanyAccounts extends Model
         'balance',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'date' => 'date',
     ];

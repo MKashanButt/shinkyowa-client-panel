@@ -6,6 +6,7 @@ use App\Models\CustomerAccounts;
 use App\Models\CustomerPayments;
 use App\Models\Payments;
 use App\Models\Stock;
+use App\Models\User;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
@@ -21,15 +22,15 @@ class StatsOverview extends BaseWidget
 
     protected function getCustomerCount(): int
     {
-        $count = CustomerAccounts::count();
+        $count = User::where('type', 'Customer Account')->count();
         return number_format($count);
     }
     protected function getPaymentTotal()
     {
-        $payment = Payments::get('amount');
+        $payment = Payments::get('amount_in_dollar');
         $total = 0;
         foreach ($payment as $amount) {
-            $total += $amount->amount;
+            $total += $amount->amount_in_dollar;
         }
         $total = "$" . number_format($total);
         return $total;
@@ -37,11 +38,11 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         return [
-            Stat::make('Total Vehicles', $this->getVehicleCount())
-                ->description('Uploaded'),
-            Stat::make('Total Customers', $this->getCustomerCount())
-                ->description('Active'),
-            Stat::make('Total Payments', $this->getPaymentTotal())
+            Stat::make('', $this->getVehicleCount())
+                ->description('Vehicles Uploaded'),
+            Stat::make('', $this->getCustomerCount())
+                ->description('Active Customers'),
+            Stat::make('', $this->getPaymentTotal())
                 ->description('Recieved')
         ];
     }

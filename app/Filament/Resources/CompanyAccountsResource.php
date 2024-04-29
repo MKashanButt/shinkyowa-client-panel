@@ -6,7 +6,9 @@ use App\Filament\Resources\CompanyAccountsResource\Pages;
 use App\Filament\Resources\CompanyAccountsResource\RelationManagers;
 use App\Models\CompanyAccounts;
 use Filament\Forms;
+use Filament\Forms\Components\View;
 use Filament\Forms\Form;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -21,7 +23,13 @@ class CompanyAccountsResource extends Resource
 
     protected static ?string $navigationGroup = "Accounts";
 
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 2;
+
+    protected static ?string $modelLabel = 'Company Account';
+
+    public function getTotal()
+    {
+    }
 
     public static function form(Form $form): Form
     {
@@ -40,6 +48,7 @@ class CompanyAccountsResource extends Resource
                     ->maxLength(10),
                 Forms\Components\TextInput::make('balance')
                     ->required()
+                    ->readOnly()
                     ->maxLength(10),
             ]);
     }
@@ -50,6 +59,8 @@ class CompanyAccountsResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('date')
                     ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('description')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('debit')
                     ->numeric()

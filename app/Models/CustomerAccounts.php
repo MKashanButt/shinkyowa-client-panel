@@ -9,24 +9,16 @@ class CustomerAccounts extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'customer_id',
+        'vehicle_name',
+        'chassis',
+        'total_cnf',
         'customer_name',
         'customer_email',
-        'password',
+        'payment_recieved',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
+    protected $casts = [
+        'payment_recieved' => 'date'
     ];
 }
