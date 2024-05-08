@@ -25,8 +25,11 @@ class Stock extends Model
         'body_type',
         'fuel',
         'category',
+        'region',
         'extras',
         'buy_link',
+        'thumbnail',
+        'stock_images'
     ];
 
     protected $casts = [

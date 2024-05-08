@@ -40,8 +40,7 @@ class StockResource extends Resource
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('fob')
-                    ->required()
-                    ->maxLength(10),
+                    ->required(),
                 Forms\Components\TextInput::make('currency')
                     ->maxLength(1)
                     ->default(null),
@@ -64,6 +63,9 @@ class StockResource extends Resource
                     ->required()
                     ->maxLength(10),
                 Forms\Components\TextInput::make('category')
+                    ->required()
+                    ->maxLength(25),
+                Forms\Components\TextInput::make('region')
                     ->required()
                     ->maxLength(25),
                 Forms\Components\Textarea::make('extras')
@@ -112,6 +114,8 @@ class StockResource extends Resource
                 Tables\Columns\TextColumn::make('fuel')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('category')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('region')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
