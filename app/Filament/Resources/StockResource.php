@@ -62,6 +62,7 @@ class StockResource extends Resource
                     ->options([
                         '¥' => '¥',
                         '€' => '€',
+                        '$' => '$',
                         '£' => '£',
                     ])
                     ->required(),
@@ -79,15 +80,15 @@ class StockResource extends Resource
                     ->maxLength(10),
                 Forms\Components\Select::make('body_type')
                     ->options([
-                        'hatchback' => 'Hatchback',
-                        'sedan' => 'Sedan',
-                        'truck' => 'Truck',
+                        'Hatchback' => 'Hatchback',
+                        'Sedan' => 'Sedan',
+                        'Truck' => 'Truck',
                         'SUV' => 'SUV',
-                        'van' => 'Van',
-                        'pickup' => 'Pickup',
-                        'wagon' => 'Wagon',
-                        'buses' => 'Buses',
-                        'mini buses' => 'Mini Buses',
+                        'Van' => 'Van',
+                        'Pickup' => 'Pickup',
+                        'Wagon' => 'Wagon',
+                        'Buses' => 'Buses',
+                        'Mini Buses' => 'Mini Buses',
                     ])
                     ->searchable()
                     ->required(),
@@ -104,15 +105,15 @@ class StockResource extends Resource
                     ->required(),
                 Forms\Components\Select::make('country')
                     ->options([
-                        'jamaica' => 'Jamaica',
-                        'bahamas' => 'Bahamas',
-                        'guyana' => 'Guyana',
-                        'barbados' => 'Barbados',
-                        'kenya' => 'Kenya',
-                        'tanzania' => 'Tanzania',
-                        'ireland' => 'Ireland',
+                        'Jamaica' => 'Jamaica',
+                        'Bahamas' => 'Bahamas',
+                        'Guyana' => 'Guyana',
+                        'Barbados' => 'Barbados',
+                        'Kenya' => 'Kenya',
+                        'Tanzania' => 'Tanzania',
+                        'Ireland' => 'Ireland',
                         'UK' => 'UK',
-                        'pakistan' => 'Pakistan',
+                        'Pakistan' => 'Pakistan',
                     ])
                     ->searchable()
                     ->required(),
