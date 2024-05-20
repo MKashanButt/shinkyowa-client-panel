@@ -25,7 +25,7 @@ class Stock extends Model
         'body_type',
         'fuel',
         'category',
-        'region',
+        'country',
         'extras',
         'buy_link',
         'thumbnail',

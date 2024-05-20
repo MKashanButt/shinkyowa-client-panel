@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use OpenSpout\Reader\CSV\Options;
 
 class StockResource extends Resource
 {
@@ -30,9 +31,25 @@ class StockResource extends Resource
                 Forms\Components\TextInput::make('stock_id')
                     ->required()
                     ->maxLength(10),
-                Forms\Components\TextInput::make('make')
-                    ->required()
-                    ->maxLength(10),
+                Forms\Components\Select::make('make')
+                    ->options([
+                        'toyota' => 'Toyota',
+                        'nissan' => 'Nissan',
+                        'mazda' => 'Mazda',
+                        'mitsubishi' => 'Mitsubishi',
+                        'honda' => 'Honda',
+                        'suzuki' => 'Suzuki',
+                        'subaru' => 'Subaru',
+                        'izusu' => 'Izusu',
+                        'daihatsu' => 'Daihatsu',
+                        'mitsuoka' => 'Mitsuoka',
+                        'lexus' => 'Lexus',
+                        'BMW' => 'BMW',
+                        'hino' => 'Hino',
+                        'volswagen' => 'Volswagen',
+                    ])
+                    ->searchable()
+                    ->required(),
                 Forms\Components\TextInput::make('model')
                     ->required()
                     ->maxLength(10),
@@ -41,9 +58,13 @@ class StockResource extends Resource
                     ->numeric(),
                 Forms\Components\TextInput::make('fob')
                     ->required(),
-                Forms\Components\TextInput::make('currency')
-                    ->maxLength(1)
-                    ->default(null),
+                Forms\Components\Select::make('currency')
+                    ->options([
+                        '¥' => '¥',
+                        '€' => '€',
+                        '£' => '£',
+                    ])
+                    ->required(),
                 Forms\Components\TextInput::make('mileage')
                     ->required()
                     ->maxLength(10),
@@ -56,18 +77,46 @@ class StockResource extends Resource
                 Forms\Components\TextInput::make('transmission')
                     ->required()
                     ->maxLength(10),
-                Forms\Components\TextInput::make('body_type')
-                    ->required()
-                    ->maxLength(10),
+                Forms\Components\Select::make('body_type')
+                    ->options([
+                        'hatchback' => 'Hatchback',
+                        'sedan' => 'Sedan',
+                        'truck' => 'Truck',
+                        'SUV' => 'SUV',
+                        'van' => 'Van',
+                        'pickup' => 'Pickup',
+                        'wagon' => 'Wagon',
+                        'buses' => 'Buses',
+                        'mini buses' => 'Mini Buses',
+                    ])
+                    ->searchable()
+                    ->required(),
                 Forms\Components\TextInput::make('fuel')
                     ->required()
                     ->maxLength(10),
-                Forms\Components\TextInput::make('category')
+                Forms\Components\Select::make('category')
+                    ->options([
+                        'stock' => 'Stock',
+                        'new arrival' => 'New Arrival',
+                        'discounted' => 'Discounted',
+                        'commercial' => 'Commercial',
+                    ])
                     ->required()
                     ->maxLength(25),
-                Forms\Components\TextInput::make('region')
-                    ->required()
-                    ->maxLength(25),
+                Forms\Components\Select::make('country')
+                    ->options([
+                        'jamaica' => 'Jamaica',
+                        'bahamas' => 'Bahamas',
+                        'guyana' => 'Guyana',
+                        'barbados' => 'Barbados',
+                        'kenya' => 'Kenya',
+                        'tanzania' => 'Tanzania',
+                        'ireland' => 'Ireland',
+                        'UK' => 'UK',
+                        'pakistan' => 'Pakistan',
+                    ])
+                    ->searchable()
+                    ->required(),
                 Forms\Components\Textarea::make('extras')
                     ->required()
                     ->columnSpanFull(),
@@ -115,7 +164,7 @@ class StockResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('category')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('region')
+                Tables\Columns\TextColumn::make('country')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
