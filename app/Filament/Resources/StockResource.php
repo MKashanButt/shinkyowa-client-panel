@@ -101,8 +101,7 @@ class StockResource extends Resource
                         'discounted' => 'Discounted',
                         'commercial' => 'Commercial',
                     ])
-                    ->required()
-                    ->maxLength(25),
+                    ->required(),
                 Forms\Components\Select::make('country')
                     ->options([
                         'jamaica' => 'Jamaica',
