@@ -117,7 +117,7 @@ class StockResource extends Resource
                     ])
                     ->searchable()
                     ->required(),
-                Forms\Components\Textarea::make('extras')
+                Forms\Components\RichEditor::make('extras')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\Textarea::make('buy_link')
