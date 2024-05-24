@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use NunoMaduro\Collision\Adapters\Phpunit\State;
 use OpenSpout\Reader\CSV\Options;
 
 class StockResource extends Resource
@@ -29,6 +30,12 @@ class StockResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('stock_id')
+                    ->default(function () {
+                        $res = Stock::orderBy('id', 'DESC')->first();
+                        $res = str_replace('SKI-', '', $res->stock_id) + 1;
+                        $id = 'SKI' . '-' . $res;
+                        return $id;
+                    })
                     ->required()
                     ->maxLength(10),
                 Forms\Components\Select::make('make')
