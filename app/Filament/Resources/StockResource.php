@@ -82,9 +82,12 @@ class StockResource extends Resource
                 Forms\Components\TextInput::make('doors')
                     ->required()
                     ->maxLength(4),
-                Forms\Components\TextInput::make('transmission')
-                    ->required()
-                    ->maxLength(10),
+                Forms\Components\Select::make('transmission')
+                    ->options([
+                        'Automatic' => 'Automatic',
+                        'Manual' => 'Manual',
+                    ])
+                    ->required(),
                 Forms\Components\Select::make('body_type')
                     ->options([
                         'Hatchback' => 'Hatchback',
@@ -125,9 +128,6 @@ class StockResource extends Resource
                     ->searchable()
                     ->required(),
                 Forms\Components\RichEditor::make('extras')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('buy_link')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('thumbnail')

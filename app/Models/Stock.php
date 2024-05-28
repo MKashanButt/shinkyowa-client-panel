@@ -27,7 +27,6 @@ class Stock extends Model
         'category',
         'country',
         'extras',
-        'buy_link',
         'thumbnail',
         'stock_images'
     ];
