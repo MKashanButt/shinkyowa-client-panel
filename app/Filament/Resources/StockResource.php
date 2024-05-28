@@ -129,7 +129,7 @@ class StockResource extends Resource
                     ])
                     ->searchable()
                     ->required(),
-                Forms\Components\RichEditor::make('extras')
+                Forms\Components\RichEditor::make('features')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('thumbnail')
