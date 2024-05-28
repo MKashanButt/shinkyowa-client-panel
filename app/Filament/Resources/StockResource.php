@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use NunoMaduro\Collision\Adapters\Phpunit\State;
 use OpenSpout\Reader\CSV\Options;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Joshembling\ImageOptimizer\Components\SpatieMediaLibraryFileUpload as ComponentsSpatieMediaLibraryFileUpload;
 
 class StockResource extends Resource
 {
@@ -131,8 +133,10 @@ class StockResource extends Resource
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('thumbnail')
+                    ->optimize('webp')
                     ->required(),
                 Forms\Components\FileUpload::make('stock_images')
+                    ->optimize('webp')
                     ->multiple()
                     ->required(),
             ]);
