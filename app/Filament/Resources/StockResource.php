@@ -49,7 +49,7 @@ class StockResource extends Resource
                         'honda' => 'Honda',
                         'suzuki' => 'Suzuki',
                         'subaru' => 'Subaru',
-                        'izusu' => 'Izusu',
+                        'isuzu' => 'Isuzu',
                         'daihatsu' => 'Daihatsu',
                         'mitsuoka' => 'Mitsuoka',
                         'lexus' => 'Lexus',
