@@ -26,7 +26,7 @@ class Stock extends Model
         'fuel',
         'category',
         'country',
-        'extras',
+        'features',
         'thumbnail',
         'stock_images'
     ];
