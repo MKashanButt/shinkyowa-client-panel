@@ -150,6 +150,8 @@ class StockResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('stock_id')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('chassis')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('make')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('model')
@@ -162,8 +164,6 @@ class StockResource extends Resource
                 Tables\Columns\TextColumn::make('currency')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('mileage')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('engine')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('doors')
                     ->searchable(),
