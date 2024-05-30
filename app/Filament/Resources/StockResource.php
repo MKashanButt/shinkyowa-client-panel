@@ -40,6 +40,9 @@ class StockResource extends Resource
                     })
                     ->required()
                     ->maxLength(10),
+                Forms\Components\TextInput::make('chassis')
+                    ->required()
+                    ->maxLength(10),
                 Forms\Components\Select::make('make')
                     ->options([
                         'toyota' => 'Toyota',
@@ -76,9 +79,6 @@ class StockResource extends Resource
                     ])
                     ->required(),
                 Forms\Components\TextInput::make('mileage')
-                    ->required()
-                    ->maxLength(10),
-                Forms\Components\TextInput::make('engine')
                     ->required()
                     ->maxLength(10),
                 Forms\Components\TextInput::make('doors')
