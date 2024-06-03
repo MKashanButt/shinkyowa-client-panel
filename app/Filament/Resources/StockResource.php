@@ -55,8 +55,10 @@ class StockResource extends Resource
                         'isuzu' => 'Isuzu',
                         'daihatsu' => 'Daihatsu',
                         'mitsuoka' => 'Mitsuoka',
+                        'audi' => 'Audi',
                         'lexus' => 'Lexus',
                         'BMW' => 'BMW',
+                        'mercedes' => 'Mercedes',
                         'hino' => 'Hino',
                         'volswagen' => 'Volswagen',
                     ])
