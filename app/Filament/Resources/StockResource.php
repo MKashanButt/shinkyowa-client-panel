@@ -66,7 +66,7 @@ class StockResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('model')
                     ->required()
-                    ->maxLength(10),
+                    ->maxLength(20),
                 Forms\Components\TextInput::make('year')
                     ->required()
                     ->numeric(),
