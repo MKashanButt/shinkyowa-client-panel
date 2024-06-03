@@ -19,7 +19,7 @@ class Stock extends BaseWidget
             ->query(ModelsStock::query())
             ->columns([
                 Tables\Columns\ImageColumn::make('thumbnail'),
-                Tables\Columns\ImageColumn::make('chassis'),
+                Tables\Columns\TextColumn::make('chassis'),
                 Tables\Columns\TextColumn::make('make'),
                 Tables\Columns\TextColumn::make('model'),
                 Tables\Columns\TextColumn::make('year'),
