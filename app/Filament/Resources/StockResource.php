@@ -127,6 +127,7 @@ class StockResource extends Resource
                         'Tanzania' => 'Tanzania',
                         'Ireland' => 'Ireland',
                         'UK' => 'UK',
+                        'Mauritius' => 'Mauritius',
                         'Pakistan' => 'Pakistan',
                     ])
                     ->searchable()
