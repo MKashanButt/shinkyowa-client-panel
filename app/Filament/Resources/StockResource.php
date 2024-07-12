@@ -60,7 +60,7 @@ class StockResource extends Resource
                         'BMW' => 'BMW',
                         'mercedes' => 'Mercedes',
                         'hino' => 'Hino',
-                        'volswagen' => 'Volswagen',
+                        'volkswagen' => 'Volkswagen',
                     ])
                     ->searchable()
                     ->required(),
